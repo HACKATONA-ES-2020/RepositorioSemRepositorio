@@ -23,6 +23,7 @@ public class TelaInicial : MonoBehaviour
     public GameObject txtentrada1;
 
     public GameObject telaPacienteBasico;
+    public GameObject telaPacienteBasico2;
 
     void Start(){
         paciente1 = new Paciente("Joao da Silva","12/07/1973","Masculino","123","29/10/19","O+");
@@ -43,5 +44,10 @@ public class TelaInicial : MonoBehaviour
     public void ClicouBotaoAcompanhar(){
         telaInicial.SetActive(false);
         telaPacienteBasico.SetActive(true);
+    }
+
+    public void ClicouBotaoAcompanhar2(){
+        telaInicial.SetActive(false);
+        telaPacienteBasico2.SetActive(true);
     }
 }

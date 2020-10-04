@@ -7,29 +7,36 @@ using System.Threading;
 
 public class TelaPacienteBasico : MonoBehaviour
 {
-    private static Semaphore _pool;
     public GameObject scriptTelaInicial;
     public GameObject scriptTelaBusca;
     public GameObject telaPacienteBasico;
-    public GameObject telaPacienteAvancada;
-
-    public GameObject txtnome;
-
-    public GameObject Deus;
+    public GameObject telaPacienteAvancado;
+    public GameObject telaInicial;
     //pacientes
-    private Paciente paciente; 
+    private Paciente paciente1; 
 
-    public static int valor;
+     public GameObject txtnome;
+      public GameObject txtdtnasc;
+      public GameObject txtgenero;
+      public GameObject txtcpf;
+      public GameObject txtentrada;
 
-    void Update(){
-        valor = scriptTelaBusca.GetComponent<TeladeBusca>().npaciente;
-        //paciente = scriptTelaBusca.GetComponent<TeladeBusca>().pacienteSelecionado;
-        //txtnome1.GetComponent<Text>().text = paciente1.getNome();
-        Debug.Log(valor);
+    void Start(){
+        paciente1 = new Paciente("Joao da Silva","12/07/1973","Masculino","123","29/10/19","O+");
+
+        txtnome.GetComponent<Text>().text = paciente1.getNome();
+        txtdtnasc.GetComponent<Text>().text = paciente1.getDataDeNascimento();
+        txtgenero.GetComponent<Text>().text = paciente1.getGenero();
+        txtcpf.GetComponent<Text>().text = paciente1.getCPF();
+        txtentrada.GetComponent<Text>().text = paciente1.getEntrada();
     }
 
     public void CliclouBotaoMaisDados(){
         telaPacienteBasico.SetActive(false);
-        telaPacienteAvancada.SetActive(true);
+        telaInicial.SetActive(true);
+    }
+    public void ClicloHistorico(){
+        telaPacienteBasico.SetActive(false);
+        telaPacienteAvancado.SetActive(true);
     }
 }

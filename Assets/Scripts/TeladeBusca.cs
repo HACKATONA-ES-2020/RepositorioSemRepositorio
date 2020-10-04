@@ -9,13 +9,12 @@ public class TeladeBusca : MonoBehaviour
     public InputField inputProntuario;
     public GameObject TelaPerfil;
     public GameObject TelaBusca;
+    public GameObject TelaPaciente1;
+    public GameObject TelaPaciente2;
     public GameObject scriptTelaInicial;
 
     private string numeroProntuario;
     private Text senha;
-
-    public GameObject Deus;
-
     private Paciente paciente1;
     private Paciente paciente2;
 
@@ -46,16 +45,14 @@ public class TeladeBusca : MonoBehaviour
         if(numeroProntuario.Equals(paciente1.getCPF())){
             //pacienteSelecionado = paciente1;
             npaciente = 1;
-            //Deus.GetComponent<Text>().text = "1";
-            Debug.Log("Deus:");
-            Debug.Log(Deus);
+            TelaPaciente1.SetActive(true);
         }
         if(numeroProntuario.Equals(paciente2.getCPF())){
             //pacienteSelecionado = paciente2;
             npaciente = 2;
+            TelaPaciente2.SetActive(true);
         }
-
-        TelaPerfil.SetActive(true);
+        Debug.Log("Anivia");
         TelaBusca.SetActive(false);
     }
 }
